@@ -10,6 +10,8 @@ public class Pickable : MonoBehaviour
     private Rigidbody grabAnchor;
     private float spring = 1000f;
     private float damper = 50f;
+    private float maxDistance = 0.3f;
+    private float maxVelocity = 10f;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,6 +35,10 @@ public class Pickable : MonoBehaviour
     void OnMouseDrag()
     {
         grabAnchor.MovePosition(GetMouseWorldPos());
+        if (rb.linearVelocity.magnitude > maxVelocity)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * maxVelocity;
+        }
     }
 
     void OnMouseUp()
@@ -61,5 +67,6 @@ public class Pickable : MonoBehaviour
         grabJoint.damper = damper;
         grabJoint.autoConfigureConnectedAnchor = false;
         grabJoint.connectedAnchor = Vector3.zero;
+        grabJoint.maxDistance = maxDistance;
     }
 }
