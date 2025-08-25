@@ -35,10 +35,9 @@ public class ExchangeLimb : MonoBehaviour
 
     private void KeepTransform()
     {
-        transform.localScale = meshTransform.localScale;
+        //Vector3 newScale = new Vector3(meshTransform.localScale.x, transform.localScale.y, meshTransform.localScale.z);
+        //transform.localScale = newScale;
         Vector3 eulerRotation = new Vector3(meshTransform.transform.eulerAngles.x, meshTransform.transform.eulerAngles.y, meshTransform.transform.eulerAngles.z);
-        Debug.Log(eulerRotation);
-        //transform.rotation = Quaternion.Euler(eulerRotation);
         rb.rotation = Quaternion.Euler(eulerRotation);
     }
 }
