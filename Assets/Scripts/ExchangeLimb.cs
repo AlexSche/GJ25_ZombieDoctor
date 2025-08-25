@@ -3,11 +3,13 @@ using UnityEngine;
 public class ExchangeLimb : MonoBehaviour
 {
     private MeshFilter meshFilter;
+    private Rigidbody rb;
     [SerializeField] private Mesh newLimbMesh;
-    [SerializeField] private Transform meshScales;
+    [SerializeField] private Transform meshTransform;
     void Start()
     {
         meshFilter = GetComponent<MeshFilter>();
+        rb = GetComponent<Rigidbody>();
         if (newLimbMesh != null)
         {
             ExchangeActiveLimb();
@@ -21,9 +23,9 @@ public class ExchangeLimb : MonoBehaviour
     private void ExchangeActiveLimb()
     {
         meshFilter.mesh = newLimbMesh;
-        if (meshScales != null)
+        if (meshTransform != null)
         {
-            KeepScales();
+            KeepTransform();
         }
         else
         {
@@ -31,8 +33,12 @@ public class ExchangeLimb : MonoBehaviour
         }
     }
 
-    private void KeepScales()
+    private void KeepTransform()
     {
-        transform.localScale = meshScales.localScale;
+        transform.localScale = meshTransform.localScale;
+        Vector3 eulerRotation = new Vector3(meshTransform.transform.eulerAngles.x, meshTransform.transform.eulerAngles.y, meshTransform.transform.eulerAngles.z);
+        Debug.Log(eulerRotation);
+        //transform.rotation = Quaternion.Euler(eulerRotation);
+        rb.rotation = Quaternion.Euler(eulerRotation);
     }
 }
