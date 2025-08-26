@@ -142,7 +142,7 @@
 	</object>
 	<object class="SingleSound" id="{227b10d6-6863-479b-a40b-69b7d8604b48}">
 		<property name="start">
-			<value>5.0500000000000007</value>
+			<value>5.0499999999999998</value>
 		</property>
 		<property name="length">
 			<value>0.34349999999999969</value>
@@ -176,10 +176,10 @@
 	</object>
 	<object class="TransitionRegion" id="{9aaa9659-75bf-4145-ae70-0024852880dc}">
 		<property name="position">
-			<value>1.2388046959095802</value>
+			<value>0.90000000000000002</value>
 		</property>
 		<property name="length">
-			<value>3.8111953040904201</value>
+			<value>4.1500000000000004</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{6f77c5bf-4ce6-43dd-ae67-a6d3c3473d2e}</destination>
