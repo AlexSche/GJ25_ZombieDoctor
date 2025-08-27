@@ -30,7 +30,7 @@ public class Thread : MonoBehaviour
     private void OnMouseExit()
     {
         // if target position reached break;
-        DrawThread(startPoint, startPoint);
+        //DrawThread(startPoint, startPoint);
     }
 
     private Vector3 GetMousePosition()
