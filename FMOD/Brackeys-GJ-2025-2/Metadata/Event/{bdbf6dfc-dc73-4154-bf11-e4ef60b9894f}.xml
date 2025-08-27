@@ -8,7 +8,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{9fd1ab60-50a8-464e-879a-3094ff5af480}</destination>
+			<destination>{d9f89870-360d-40fa-b4e4-7439dbbc0e0e}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{00e9bc6f-260b-4658-b962-263f0f79b733}</destination>
@@ -60,7 +60,14 @@
 			<destination>{cd06553b-d4f2-48d4-b7fe-1ddff9e35243}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{d533812b-cbbe-448b-b6c1-92f051328389}" />
+	<object class="EventAutomatableProperties" id="{d533812b-cbbe-448b-b6c1-92f051328389}">
+		<property name="isPersistent">
+			<value>true</value>
+		</property>
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{4fdadd77-b7d4-4961-bc2d-25b3d67fcd40}" />
 	<object class="Timeline" id="{a1848f9c-42d9-4896-bc29-37ae19ff7e4d}">
 		<property name="isProxyEnabled">
