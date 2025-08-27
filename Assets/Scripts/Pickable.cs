@@ -5,7 +5,6 @@ public class Pickable : MonoBehaviour
 {
     private float mouseZCoord;
     private Rigidbody rb;
-
     private SpringJoint grabJoint;
     private Rigidbody grabAnchor;
     [SerializeField] private float spring = 1000f;

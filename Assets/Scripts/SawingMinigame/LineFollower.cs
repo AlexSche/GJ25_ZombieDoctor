@@ -17,23 +17,25 @@ public class LineFollower : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0)) // left click & drag
+        if (Input.GetMouseButton(0)) 
         {
             Vector3 mousePos = Input.mousePosition;
             Ray ray = cam.ScreenPointToRay(mousePos);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
+                // if the line is hit - the object this script sits on
                 if (hit.collider.gameObject == gameObject)
                 {
-                    Debug.Log("Mouse is on the line!");
+                    // mouse is on the line
                     Progress();
                 }
             }
         }
         if (progress > 0.85f)
         {
-            spriteRenderer.color = new Color(46,91,45);
+            spriteRenderer.color = new Color(46, 91, 45);
+            // shoot the event that the line has been followed
         }
     }
 
@@ -55,12 +57,10 @@ public class LineFollower : MonoBehaviour
         // Vector from start to mouse
         Vector3 toMouse = mouseWorld - start;
 
-        // Distance perpendicular to the line
-        float distanceFromLine = Vector3.Cross(lineDir, toMouse).magnitude;
         // Project mouse onto line and get normalized progress
         float dot = Vector3.Dot(toMouse, lineDir);
         float t = Mathf.Clamp01(dot / lineLength);
-
+        
         // Update progress if mouse moves forward along the line
         if (t > progress)
             progress = t;
