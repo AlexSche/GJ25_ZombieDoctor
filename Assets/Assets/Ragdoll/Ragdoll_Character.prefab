@@ -445,6 +445,7 @@ GameObject:
   - component: {fileID: 6320687930546898625}
   - component: {fileID: 2623687081904276127}
   - component: {fileID: 3825927357392756236}
+  - component: {fileID: 727408614290831137}
   m_Layer: 0
   m_Name: LLowerArm
   m_TagString: Untagged
@@ -628,6 +629,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &727408614290831137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882630830008882526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeba5d5879eaa07449d57658156d1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLimbMesh: {fileID: -462981019419857548, guid: e60fc7bd2cf0fe5429795368212914f9, type: 3}
+  meshScales: {fileID: -4292154010595695564, guid: e60fc7bd2cf0fe5429795368212914f9, type: 3}
 --- !u!1 &2048741380886870760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1242,7 @@ GameObject:
   - component: {fileID: 4592400456097855454}
   - component: {fileID: 6945928491693011614}
   - component: {fileID: 7045591748617487612}
+  - component: {fileID: 3740383190673604690}
   m_Layer: 0
   m_Name: LUpperArm
   m_TagString: Untagged
@@ -1410,6 +1426,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3740383190673604690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423124207344574805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeba5d5879eaa07449d57658156d1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLimbMesh: {fileID: 0}
+  meshScales: {fileID: 0}
 --- !u!1 &6467719434118415031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1455,7 @@ GameObject:
   - component: {fileID: 2269835866915925434}
   - component: {fileID: 7252140276496927062}
   - component: {fileID: 7309644976990704538}
+  - component: {fileID: 732143860322987307}
   m_Layer: 0
   m_Name: RLowerArm
   m_TagString: Untagged
@@ -1608,6 +1639,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &732143860322987307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467719434118415031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeba5d5879eaa07449d57658156d1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLimbMesh: {fileID: -462981019419857548, guid: e60fc7bd2cf0fe5429795368212914f9, type: 3}
+  meshScales: {fileID: -4292154010595695564, guid: e60fc7bd2cf0fe5429795368212914f9, type: 3}
 --- !u!1 &7014354102148061875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2130,7 @@ GameObject:
   - component: {fileID: 1493487694534076103}
   - component: {fileID: 9041178073507698124}
   - component: {fileID: 7424760653817042755}
+  - component: {fileID: 3051148277876915705}
   m_Layer: 0
   m_Name: LHand
   m_TagString: Untagged
@@ -2266,6 +2312,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3051148277876915705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904402860122487100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeba5d5879eaa07449d57658156d1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLimbMesh: {fileID: -462981019419857548, guid: dfe436bdaf6d7854693fb17d17607852, type: 3}
+  meshScales: {fileID: -4292154010595695564, guid: dfe436bdaf6d7854693fb17d17607852, type: 3}
 --- !u!1 &7990935226658859547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,6 +2341,7 @@ GameObject:
   - component: {fileID: 7662508080725673958}
   - component: {fileID: 3121324693053669953}
   - component: {fileID: 5541461449412509878}
+  - component: {fileID: 6310342822084270791}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -2462,6 +2523,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6310342822084270791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990935226658859547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeba5d5879eaa07449d57658156d1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLimbMesh: {fileID: -462981019419857548, guid: dfe436bdaf6d7854693fb17d17607852, type: 3}
+  meshScales: {fileID: -4292154010595695564, guid: dfe436bdaf6d7854693fb17d17607852, type: 3}
 --- !u!1 &8265361851315704325
 GameObject:
   m_ObjectHideFlags: 0
