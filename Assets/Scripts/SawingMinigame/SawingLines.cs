@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ public class SawingLines : MonoBehaviour
     {
         GeneratePoints();
         ConnectPoints();
+        AudioManager.instance.PlayEventReferenceSound(FModEvents.instance.sawChain, transform.position);
     }
 
     private void GeneratePoints()

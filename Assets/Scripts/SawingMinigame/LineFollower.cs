@@ -38,6 +38,7 @@ public class LineFollower : MonoBehaviour
         {
             if (!isComplete)
             {
+                AudioManager.instance.PlayEventReferenceSound(FModEvents.instance.sawStroke, transform.position);
                 if (gooMaterial)
                 {
                     spriteRenderer.material = gooMaterial;
