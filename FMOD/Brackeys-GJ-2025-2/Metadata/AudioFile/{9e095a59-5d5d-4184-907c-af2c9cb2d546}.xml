@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{9e095a59-5d5d-4184-907c-af2c9cb2d546}">
 		<property name="assetPath">
-			<value>SFX/splatters-004.ogg</value>
+			<value>SFX/splatters/splatters-004.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -69,7 +69,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{6717ef1b-dd19-4145-9f80-7527ad8454ed}">
 		<property name="volume">
-			<value>-6.5</value>
+			<value>-5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{2488700e-ca57-456f-888f-c6e4db169e95}</destination>
@@ -87,6 +87,9 @@
 		</property>
 		<property name="delayType">
 			<value>0</value>
+		</property>
+		<property name="startOffset">
+			<value>7.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{d2c40e2f-e037-4a56-b7f5-10f0b37bfc32}</destination>
@@ -108,10 +111,10 @@
 	<object class="MixerBusPanner" id="{a2d84226-c021-4f6e-8d19-4f26e8335453}" />
 	<object class="LoopRegion" id="{3d4e0aa0-8c9b-4d64-ae6c-23a82c56914a}">
 		<property name="position">
-			<value>0.044999999999999998</value>
+			<value>0.02</value>
 		</property>
 		<property name="length">
-			<value>0.080000000000000016</value>
+			<value>0.091999999999999998</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{8769f066-9c0f-4ec2-84bd-523e1a5d92cd}</destination>
@@ -127,7 +130,6 @@
 		<relationship name="effects">
 			<destination>{988aa8fd-fcd1-463a-b249-13a149a664c0}</destination>
 			<destination>{9d9372ed-6da9-45e4-991d-4a279a51e0fc}</destination>
-			<destination>{b31ecd46-5a18-4b44-b9cc-279abc061948}</destination>
 			<destination>{2dc684dc-5c37-4cdf-9037-094f8edbad83}</destination>
 			<destination>{9d89db57-5109-4b2e-ade4-8e0e410f6e4c}</destination>
 		</relationship>
@@ -193,17 +195,6 @@
 	<object class="DistortionEffect" id="{9d9372ed-6da9-45e4-991d-4a279a51e0fc}">
 		<property name="level">
 			<value>0.664999962</value>
-		</property>
-	</object>
-	<object class="ChorusEffect" id="{b31ecd46-5a18-4b44-b9cc-279abc061948}">
-		<property name="rate">
-			<value>7</value>
-		</property>
-		<property name="depth">
-			<value>4.5</value>
-		</property>
-		<property name="mix">
-			<value>31.5</value>
 		</property>
 	</object>
 	<object class="MultibandEqEffect" id="{2dc684dc-5c37-4cdf-9037-094f8edbad83}">

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{02c2cb63-03f7-4aae-9ab9-a085fbb72bf6}">
 		<property name="assetPath">
-			<value>SFX/syringe-extract.ogg</value>
+			<value>SFX/syringe/syringe-extract.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

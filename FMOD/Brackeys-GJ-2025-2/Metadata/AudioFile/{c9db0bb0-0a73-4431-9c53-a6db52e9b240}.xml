@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{c9db0bb0-0a73-4431-9c53-a6db52e9b240}">
 		<property name="assetPath">
-			<value>SFX/stitches-004.ogg</value>
+			<value>SFX/pokes/poke-004.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
