@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{43125107-c33a-4c9b-9b84-7374cdb9a242}">
+		<property name="name">
+			<value>chainsaw loops</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d9f89870-360d-40fa-b4e4-7439dbbc0e0e}</destination>
+		</relationship>
+	</object>
+</objects>

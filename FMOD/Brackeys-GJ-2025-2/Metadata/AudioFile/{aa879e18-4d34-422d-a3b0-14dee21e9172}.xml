@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{aa879e18-4d34-422d-a3b0-14dee21e9172}">
+		<property name="assetPath">
+			<value>SFX/chainsaw/chainsaw-active-loop1.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.5172500000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4d24fe9-eac2-430a-b5ea-7db3edd5dbbd}</destination>
+		</relationship>
+	</object>
+</objects>
