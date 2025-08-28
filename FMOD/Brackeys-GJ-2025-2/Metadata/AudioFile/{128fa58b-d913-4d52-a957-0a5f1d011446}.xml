@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{128fa58b-d913-4d52-a957-0a5f1d011446}">
+		<property name="assetPath">
+			<value>music/zombie surgeon - loop.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>93.333333333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4d24fe9-eac2-430a-b5ea-7db3edd5dbbd}</destination>
+		</relationship>
+	</object>
+</objects>

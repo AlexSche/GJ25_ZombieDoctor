@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ef69aa0e-bbda-4fe7-9a0c-29eb74a11fd7}">
+		<property name="assetPath">
+			<value>SFX/saw/upstrokes-003.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.34608333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4d24fe9-eac2-430a-b5ea-7db3edd5dbbd}</destination>
+		</relationship>
+	</object>
+</objects>

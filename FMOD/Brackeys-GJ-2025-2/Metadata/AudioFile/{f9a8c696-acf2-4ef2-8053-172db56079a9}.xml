@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f9a8c696-acf2-4ef2-8053-172db56079a9}">
+		<property name="assetPath">
+			<value>SFX/chainsaw/chainsaw-idle-loop2.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.0129166666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4d24fe9-eac2-430a-b5ea-7db3edd5dbbd}</destination>
+		</relationship>
+	</object>
+</objects>
