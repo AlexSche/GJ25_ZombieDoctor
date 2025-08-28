@@ -936,6 +936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!33 &935276763320885765
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1338,6 +1342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!54 &1984331993825594587
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1422,6 +1430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!54 &2158010386752540374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1822,6 +1834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!33 &3307833654497361434
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1911,6 +1927,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!114 &3825927356745025353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,6 +1943,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!136 &3839849578741151801
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2044,6 +2068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!4 &4125571591622338084
 Transform:
   m_ObjectHideFlags: 0
@@ -2526,6 +2554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!136 &5555482392024968619
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2561,6 +2593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!4 &5910915011096727346
 Transform:
   m_ObjectHideFlags: 0
@@ -2999,6 +3035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!23 &6896403124254004413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3142,6 +3182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!136 &7050453514427975064
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3374,6 +3418,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!144 &7351020796932925948
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -3432,6 +3480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!136 &7431261429768276813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3837,6 +3889,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!1 &8649415528825264608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,6 +3928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78958209e318af54db02bf6ca364032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spring: 1000
+  damper: 50
+  maxDistance: 0.3
+  maxVelocity: 10
 --- !u!4 &8824583230510835029
 Transform:
   m_ObjectHideFlags: 0
