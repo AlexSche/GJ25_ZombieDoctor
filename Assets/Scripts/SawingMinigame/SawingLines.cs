@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CreateSawingLine : MonoBehaviour
+public class SawingLines : MonoBehaviour
 {
     [SerializeField] private Transform topPos;
     [SerializeField] private Transform bottomPos;
@@ -12,7 +13,8 @@ public class CreateSawingLine : MonoBehaviour
     [SerializeField] private GameObject linePrefab;
     private Vector3 topPosOff;
     private Vector3 bottomPosOff;
-    private List<Vector3> anchorPoints = new List<Vector3>();
+    private readonly List<Vector3> anchorPoints = new List<Vector3>();
+    private readonly List<LineFollower> lines = new List<LineFollower>();
     void Start()
     {
         if (amountPoints == 0) { amountPoints = 4; }
@@ -22,6 +24,13 @@ public class CreateSawingLine : MonoBehaviour
         topPosOff.y -= offset;
         bottomPosOff = bottomPos.position;
         bottomPosOff.y += offset;
+        GameEvents.SawingMiniGameEvent.OnMiniGameStarted += CreateSawingLines;
+        GameEvents.SawingMiniGameEvent.OnLineComplete += SawingLinesComplete;
+        GameEvents.SawingMiniGameEvent.OnMiniGameFinished += DeleteLines;
+    }
+
+    public void CreateSawingLines()
+    {
         GeneratePoints();
         ConnectPoints();
     }
@@ -53,7 +62,6 @@ public class CreateSawingLine : MonoBehaviour
         Vector3 startPoint = anchorPoints[0];
         for (int i = 1; i < anchorPoints.Count; i++)
         {
-            Debug.DrawLine(startPoint, anchorPoints[i], Color.red, 100f);
             CreateLinePrefabBetweenPoints(startPoint, anchorPoints[i]);
             startPoint = anchorPoints[i];
         }
@@ -62,24 +70,59 @@ public class CreateSawingLine : MonoBehaviour
     void CreateLinePrefabBetweenPoints(Vector3 start, Vector3 end)
     {
         // Create object
-        GameObject obj = Instantiate(linePrefab);
+        GameObject line = Instantiate(linePrefab);
 
         // Position: midpoint
-        obj.transform.position = (start + end) / 2f;
-        Vector3 pos = obj.transform.position;
+        line.transform.position = (start + end) / 2f;
+        Vector3 pos = line.transform.position;
         pos.z -= 0.01f;
-        obj.transform.position = pos;
+        line.transform.position = pos;
 
         // Scale: stretch to distance (assuming prefab height = 1)
         float distance = Vector3.Distance(start, end);
-        Vector3 scale = obj.transform.localScale;
+        Vector3 scale = line.transform.localScale;
         scale.y = distance / 2f; // cylinder default height = 2 units
-        obj.transform.localScale = scale;
+        line.transform.localScale = scale;
 
         Vector3 dir = (end - start).normalized;
         // Rotation: align with direction
-        obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        obj.GetComponent<LineFollower>().Initialize(start, end, dir, distance);
+        line.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        LineFollower lineFollower = line.GetComponent<LineFollower>();
+        lineFollower.Initialize(start, end, dir, distance);
+        lines.Add(lineFollower);
     }
 
+    public bool AreSawingLinesComplete()
+    {
+        bool AreComplete = true;
+        lines.ForEach(line =>
+        {
+            if (!line.isComplete)
+            {
+                AreComplete = false;
+                return;
+            }
+        });
+        return AreComplete;
+    }
+
+    public void SawingLinesComplete()
+    {
+        if (AreSawingLinesComplete())
+        {
+            // drop chainsaw
+            GameEvents.SawingMiniGameEvent.OnMiniGameFinished.Invoke();
+        }
+    }
+
+    private void DeleteLines()
+    {
+        lines.ForEach(line =>
+        {
+            Debug.Log(line.name);
+            Destroy(line.gameObject);
+        });
+        lines.Clear();
+        anchorPoints.Clear();
+    }
 }

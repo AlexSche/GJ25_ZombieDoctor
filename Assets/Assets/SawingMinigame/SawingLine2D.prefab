@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029825759a4c1a74cbc8d14990cac1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gooMaterial: {fileID: 2100000, guid: efc97e56d15699942af36b1d5ac07e8e, type: 2}
