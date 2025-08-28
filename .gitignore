@@ -127,6 +127,7 @@ fmod_editor.log
 
 # Ignore the Cache folder since it is updated locally.
 /[Aa]ssets/Plugins/FMOD/Cache/*
+/FMOD/Brackeys-GJ-2025-2/.cache/*
 
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
