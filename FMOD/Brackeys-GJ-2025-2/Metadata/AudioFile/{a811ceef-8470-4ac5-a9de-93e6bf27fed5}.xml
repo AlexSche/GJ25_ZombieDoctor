@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{30c2a2a0-4c17-459d-b4c3-5a9f4ef08ce6}">
+	<object class="AudioFile" id="{a811ceef-8470-4ac5-a9de-93e6bf27fed5}">
 		<property name="assetPath">
-			<value>SFX/saw/downstrokes-003.ogg</value>
+			<value>SFX/chainsaw/chainsaw-activate.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.34918749999999998</value>
+			<value>1.70075</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{f4d24fe9-eac2-430a-b5ea-7db3edd5dbbd}</destination>
