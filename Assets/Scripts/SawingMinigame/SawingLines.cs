@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using FMODUnity;
-using Unity.VisualScripting;
+using FMOD.Studio;
 using UnityEngine;
 
 public class SawingLines : MonoBehaviour
@@ -16,6 +15,9 @@ public class SawingLines : MonoBehaviour
     private Vector3 bottomPosOff;
     private readonly List<Vector3> anchorPoints = new List<Vector3>();
     private readonly List<LineFollower> lines = new List<LineFollower>();
+
+    // audio
+    private EventInstance chainsawLoop;
     void Start()
     {
         if (amountPoints == 0) { amountPoints = 4; }
@@ -28,13 +30,15 @@ public class SawingLines : MonoBehaviour
         GameEvents.SawingMiniGameEvent.OnMiniGameStarted += CreateSawingLines;
         GameEvents.SawingMiniGameEvent.OnLineComplete += SawingLinesComplete;
         GameEvents.SawingMiniGameEvent.OnMiniGameFinished += DeleteLines;
+
+        chainsawLoop = AudioManager.instance.CreateSoundInstance(FModEvents.instance.sawChain);
     }
 
     public void CreateSawingLines()
     {
         GeneratePoints();
         ConnectPoints();
-        AudioManager.instance.PlayEventReferenceSound(FModEvents.instance.sawChain, transform.position);
+        chainsawLoop.start();
     }
 
     private void GeneratePoints()
@@ -126,5 +130,6 @@ public class SawingLines : MonoBehaviour
         });
         lines.Clear();
         anchorPoints.Clear();
+        chainsawLoop.stop(STOP_MODE.ALLOWFADEOUT);
     }
 }

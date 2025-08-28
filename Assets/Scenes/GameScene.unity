@@ -896,11 +896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <sawStroke>k__BackingField:
     Guid:
-      Data1: -1068802750
-      Data2: 1217111755
-      Data3: 31969962
-      Data4: 1386585932
-    Path: event:/FX/rip-n-tear
+      Data1: 22443262
+      Data2: 1119095349
+      Data3: -2090502521
+      Data4: 805780276
+    Path: event:/FX/pop
   <sawChain>k__BackingField:
     Guid:
       Data1: 1416765629
