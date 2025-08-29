@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
@@ -6,17 +5,11 @@ public class OrderManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        GameEvents.OrderingEvent.OnCreateOrder += CreateOrder;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CreateOrder()
     {
-
-    }
-
-    IEnumerator CreateOrder()
-    {
-        yield return new WaitForSeconds(0);
+        Debug.Log("Create order");
     }
 }
