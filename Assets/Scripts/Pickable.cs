@@ -9,8 +9,8 @@ public class Pickable : MonoBehaviour
     private Rigidbody grabAnchor;
     [SerializeField] private float spring = 1000f;
     [SerializeField] private float damper = 50f;
-    [SerializeField] private float maxDistance = 0.3f;
-    [SerializeField] private float maxVelocity = 10f;
+    [SerializeField] private float maxDistance = 0.01f;
+    [SerializeField] private float maxVelocity = 5f;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();

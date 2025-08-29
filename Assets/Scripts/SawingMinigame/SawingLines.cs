@@ -27,6 +27,7 @@ public class SawingLines : MonoBehaviour
         GameEvents.SawingMiniGameEvent.OnMiniGameStarted += CreateSawingLines;
         GameEvents.SawingMiniGameEvent.OnLineComplete += SawingLinesComplete;
         GameEvents.SawingMiniGameEvent.OnMiniGameFinished += DeleteLines;
+        GameEvents.SawingMiniGameEvent.OnEnteredLine += RevUpChainsaw;
 
         chainsawLoop = AudioManager.instance.CreateSoundInstance(FModEvents.instance.sawChain);
     }
@@ -111,6 +112,7 @@ public class SawingLines : MonoBehaviour
 
     public void SawingLinesComplete()
     {
+        //chainsawLoop.setParameterByName("active", 0);
         if (AreSawingLinesComplete())
         {
             // drop chainsaw
@@ -127,5 +129,10 @@ public class SawingLines : MonoBehaviour
         lines.Clear();
         anchorPoints.Clear();
         chainsawLoop.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void RevUpChainsaw()
+    {
+        chainsawLoop.setParameterByName("active", 1);
     }
 }

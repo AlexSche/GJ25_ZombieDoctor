@@ -47,4 +47,9 @@ public class AudioManager : MonoBehaviour
         return eventInstance;
     }
 
+    public void SetParameter(EventInstance instance, string parameterName, float parameterValue)
+    {
+        instance.setParameterByName(parameterName, parameterValue);
+    }
+
 }
