@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Thread : MonoBehaviour
 {
     private int number;
+    private Color[] colorIndex;
     [SerializeField] private TextMeshPro textMeshPro;
     Vector3 startPoint = Vector3.zero;
     private LineRenderer lineRenderer;
@@ -18,6 +20,8 @@ public class Thread : MonoBehaviour
         lineRenderer.endWidth = 0.03f;
         //lineRenderer.startColor = Color.black;
         //lineRenderer.endColor = Color.black;
+        colorIndex = HelperUtils.GenerateColors(10);
+        Debug.Log(colorIndex[3]);
     }
 
     void Start()
@@ -57,5 +61,6 @@ public class Thread : MonoBehaviour
     {
         number = value;
         textMeshPro.text = number.ToString();
+        spriteRenderer.color = colorIndex[value];
     }
 }
