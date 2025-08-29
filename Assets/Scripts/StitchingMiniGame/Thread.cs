@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Thread : MonoBehaviour
 {
+    private int number;
+    [SerializeField] private TextMeshPro textMeshPro;
     Vector3 startPoint = Vector3.zero;
     private LineRenderer lineRenderer;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -13,10 +16,10 @@ public class Thread : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.03f;
         lineRenderer.endWidth = 0.03f;
-        lineRenderer.startColor = Color.black;
-        lineRenderer.endColor = Color.black;
+        //lineRenderer.startColor = Color.black;
+        //lineRenderer.endColor = Color.black;
     }
-    
+
     void Start()
     {
         startPoint = transform.position;
@@ -48,5 +51,11 @@ public class Thread : MonoBehaviour
     {
         lineRenderer.SetPosition(0, pos1);
         lineRenderer.SetPosition(1, pos2);
+    }
+
+    public void SetNumber(int value)
+    {
+        number = value;
+        textMeshPro.text = number.ToString();
     }
 }

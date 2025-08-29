@@ -10,8 +10,9 @@ public class StitchingMinigame : MonoBehaviour
     [SerializeField] private Transform rightTop;
     [SerializeField] private int amountPoints = 5;
     [SerializeField] private float offset = 0.5f;
-    private List<Vector3> generatedPositions = new List<Vector3>();
-    private List<GameObject> gameObjects = new List<GameObject>();
+    private readonly List<Vector3> generatedPositions = new List<Vector3>();
+    private readonly List<GameObject> gameObjects = new List<GameObject>();
+    private readonly List<int> numbers = new List<int>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,7 @@ public class StitchingMinigame : MonoBehaviour
 
     private void GeneratePoints(Vector3 bottomPos, Vector3 topPos)
     {
+        populateNumbersInList(amountPoints);
         Vector3 topPosOff = topPos;
         topPosOff.y -= offset;
         Vector3 bottomPosOff = bottomPos;
@@ -39,12 +41,15 @@ public class StitchingMinigame : MonoBehaviour
         float incrementalDistance = maxDistance / amountPoints;
         for (int i = 1; i <= amountPoints; i++)
         {
-            float randomVerticalDistance = Random.Range(0.1f, incrementalDistance);
+            float randomVerticalDistance = Random.Range(0.75f, incrementalDistance);
             generatePos = generatePos + randomVerticalDistance * verticalDir;
             GameObject newPoint = Instantiate(threadPrefab);
             newPoint.transform.position = generatePos;
             generatedPositions.Add(generatePos);
             gameObjects.Add(newPoint);
+            int randomValue = TakeRandomNumberFromList();
+            newPoint.GetComponent<Thread>().name = randomValue.ToString();
+            newPoint.GetComponent<Thread>().SetNumber(randomValue);
             // set generate position to next part
             generatePos = bottomPosOff + i * verticalDir;
         }
@@ -58,5 +63,23 @@ public class StitchingMinigame : MonoBehaviour
             Destroy(gameObject);
         });
         gameObjects.Clear();
+    }
+
+    private void populateNumbersInList(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            numbers.Add(i);
+        }
+    }
+
+    private int TakeRandomNumberFromList()
+    {
+        int value = Random.Range(0, numbers.Count);
+        int returnValue = numbers[value];
+        numbers.Remove(returnValue);
+        Debug.Log(numbers.Count);
+        Debug.Log(returnValue);
+        return returnValue;
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 public class StitchingMinigameManager : MonoBehaviour
 {
     private Vector3 defaultPosition = new Vector3(0, 3, -9.85f);
-    private Vector3 stitchingMinigamePosition = new Vector3(30, 3.5f, -12);
+    private Vector3 stitchingMinigamePosition = new Vector3(30, 4f, -11.5f);
     private bool miniGameOpened = false;
     void Awake()
     {
