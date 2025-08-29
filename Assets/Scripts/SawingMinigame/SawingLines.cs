@@ -122,7 +122,6 @@ public class SawingLines : MonoBehaviour
     {
         lines.ForEach(line =>
         {
-            Debug.Log(line.name);
             Destroy(line.gameObject);
         });
         lines.Clear();

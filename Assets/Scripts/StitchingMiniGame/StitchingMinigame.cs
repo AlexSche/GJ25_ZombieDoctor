@@ -16,11 +16,11 @@ public class StitchingMinigame : MonoBehaviour
     void Start()
     {
         GameEvents.StitchingMiniGameEvent.OnMiniGameStarted += GenerateThreadPoints;
+        GameEvents.StitchingMiniGameEvent.OnMiniGameFinished += RemoveThreads;
     }
 
     void GenerateThreadPoints()
     {
-        Debug.Log("Generate Thread points");
         GeneratePoints(leftBottom.position, leftTop.position);
         GeneratePoints(rightBottom.position, rightTop.position);
     }
@@ -48,5 +48,15 @@ public class StitchingMinigame : MonoBehaviour
             // set generate position to next part
             generatePos = bottomPosOff + i * verticalDir;
         }
+    }
+
+    private void RemoveThreads()
+    {
+        generatedPositions.Clear();
+        gameObjects.ForEach(gameObject =>
+        {
+            Destroy(gameObject);
+        });
+        gameObjects.Clear();
     }
 }
