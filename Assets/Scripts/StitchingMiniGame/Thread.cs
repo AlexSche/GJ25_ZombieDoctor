@@ -46,7 +46,6 @@ public class Thread : MonoBehaviour
                 Thread hitThread = c.GetComponent<Thread>();
                 if (hitThread.number == number)
                 {
-                    Debug.Log("stitched this line " + number);
                     // mark this thread and the other as solved!
                     this.isComplete = true;
                     hitThread.isComplete = true;
