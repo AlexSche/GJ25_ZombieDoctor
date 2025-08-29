@@ -170,7 +170,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &1571935410051598647
 MonoBehaviour:
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spring: 1000
   damper: 50
-  maxDistance: 0.3
-  maxVelocity: 10
+  maxDistance: 0.01
+  maxVelocity: 0.05
 --- !u!1 &8684839870030242696
 GameObject:
   m_ObjectHideFlags: 0

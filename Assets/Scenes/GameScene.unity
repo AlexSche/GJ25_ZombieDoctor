@@ -176,23 +176,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c21ff6766b6c2af4fb7c38791aa0c5e4, type: 3}
---- !u!1 &54054529 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1170879090892140878, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-  m_PrefabInstance: {fileID: 4573461944588493666}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &54054532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54054529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc696491e721e0e499d56bd75ff6cd7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &161146893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,14 +2138,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.29
       objectReference: {fileID: 0}
-    - target: {fileID: 7832951221346373495, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832951221346373495, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8188183987613764375, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
       propertyPath: m_Name
       value: surgery_table_saw
@@ -2210,10 +2185,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1170879090892140878, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 54054532}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
 --- !u!1001 &5708418005496518692
 PrefabInstance:
@@ -2223,6 +2195,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6855214923618465782, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: m_Constraints
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350484574443601595, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8060536001696887566, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
       propertyPath: m_Name
       value: SawingPrefab
@@ -2266,6 +2246,26 @@ PrefabInstance:
     - target: {fileID: 8478330603409617706, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678448571092026390, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678448571092026390, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: spring
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678448571092026390, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: maxVelocity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731584631337506929, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: maxVelocity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986732929457077690, guid: 921e5a99b70ebf74698c095746b23f26, type: 3}
+      propertyPath: m_Constraints
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
