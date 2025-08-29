@@ -7,9 +7,9 @@ public class SawingLines : MonoBehaviour
     [SerializeField] private Transform topPos;
     [SerializeField] private Transform bottomPos;
     [SerializeField] private Transform leftPos;
-    [SerializeField] private int amountPoints;
+    [SerializeField] private int amountPoints = 4;
     [SerializeField] private float spread = 2;
-    [SerializeField] private float offset;
+    [SerializeField] private float offset = 0.5f;
     [SerializeField] private GameObject linePrefab;
     private Vector3 topPosOff;
     private Vector3 bottomPosOff;
@@ -20,9 +20,6 @@ public class SawingLines : MonoBehaviour
     private EventInstance chainsawLoop;
     void Start()
     {
-        if (amountPoints == 0) { amountPoints = 4; }
-        if (spread == 0) { spread = 2; }
-        if (offset == 0) { offset = 0.5f; }
         topPosOff = topPos.position;
         topPosOff.y -= offset;
         bottomPosOff = bottomPos.position;
