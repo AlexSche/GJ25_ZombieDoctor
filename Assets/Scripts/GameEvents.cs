@@ -11,6 +11,7 @@ public static class GameEvents
     public class SawingMiniGameEvent
     {
         public static UnityAction OnMiniGameStarted;
+        public static UnityAction OnEnteredLine;
         public static UnityAction OnLineComplete;
         public static UnityAction OnMiniGameFinished;
     }

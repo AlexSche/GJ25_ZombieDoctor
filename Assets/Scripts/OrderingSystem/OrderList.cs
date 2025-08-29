@@ -30,16 +30,22 @@ public class OrderList : MonoBehaviour
 
     public void RemoveFirstStitching()
     {
-        Order order = orders.First(order => order.orderType == OrderType.Stitching);
-        orders.Remove(order);
-        UpdatesOrders();
+        if (orders.Any(order => order.orderType == OrderType.Stitching))
+        {
+            Order order = orders.First(order => order.orderType == OrderType.Stitching);
+            orders.Remove(order);
+            UpdatesOrders();
+        }
     }
 
     public void RemoveFirstSawing()
     {
-        Order order = orders.First(order => order.orderType == OrderType.Sawing);
-        orders.Remove(order);
-        UpdatesOrders();
+        if (orders.Any(order => order.orderType == OrderType.Sawing))
+        {
+            Order order = orders.First(order => order.orderType == OrderType.Sawing);
+            orders.Remove(order);
+            UpdatesOrders();
+        }
     }
 
     private void UpdatesOrders()

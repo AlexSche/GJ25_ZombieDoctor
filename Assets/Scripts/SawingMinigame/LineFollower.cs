@@ -38,7 +38,6 @@ public class LineFollower : MonoBehaviour
         {
             if (!isComplete)
             {
-                AudioManager.instance.PlayOneShotReferenceSound(FModEvents.instance.sawStroke, transform.position);
                 if (gooMaterial)
                 {
                     spriteRenderer.material = gooMaterial;
@@ -64,6 +63,7 @@ public class LineFollower : MonoBehaviour
 
     void Progress()
     {
+        GameEvents.SawingMiniGameEvent.OnEnteredLine.Invoke();
         Vector3 mouseWorld = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
 
         Vector3 lineDir = direction.normalized;
