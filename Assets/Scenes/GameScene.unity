@@ -894,6 +894,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee3f9d1a63be945ade045c770a0b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <mainTheme>k__BackingField:
+    Guid:
+      Data1: -1544307267
+      Data2: 1161208387
+      Data3: 1147680167
+      Data4: 134160591
+    Path: event:/Music/BGM
   <sawStroke>k__BackingField:
     Guid:
       Data1: -1111527940

@@ -16,6 +16,7 @@ public class Thread : MonoBehaviour
         lineRenderer.startColor = Color.black;
         lineRenderer.endColor = Color.black;
     }
+    
     void Start()
     {
         startPoint = transform.position;

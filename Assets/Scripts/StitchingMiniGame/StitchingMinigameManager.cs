@@ -1,9 +1,8 @@
 using UnityEngine;
-
-public class SawingMinigameManager : MonoBehaviour
+public class StitchingMinigameManager : MonoBehaviour
 {
     private Vector3 defaultPosition = new Vector3(0, 3, -9.85f);
-    private Vector3 sawingMinigamePosition = new Vector3(15, 3.5f, -12);
+    private Vector3 stitchingMinigamePosition = new Vector3(30, 3.5f, -12);
     private bool miniGameOpened = false;
     void Awake()
     {
@@ -13,7 +12,7 @@ public class SawingMinigameManager : MonoBehaviour
 
     void Start()
     {
-        GameEvents.SawingMiniGameEvent.OnMiniGameFinished += CloseMiniGame;
+        GameEvents.StitchingMiniGameEvent.OnMiniGameFinished += CloseMiniGame;
     }
 
     void OnMouseDown()
@@ -26,8 +25,8 @@ public class SawingMinigameManager : MonoBehaviour
         if (!miniGameOpened)
         {
             miniGameOpened = true;
-            GameEvents.SawingMiniGameEvent.OnMiniGameStarted?.Invoke();
-            Camera.main.transform.position = sawingMinigamePosition;
+            Camera.main.transform.position = stitchingMinigamePosition;
+            GameEvents.StitchingMiniGameEvent.OnMiniGameStarted?.Invoke();
         }
     }
 

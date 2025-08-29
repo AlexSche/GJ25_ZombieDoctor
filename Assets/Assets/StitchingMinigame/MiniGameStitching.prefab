@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 5525823847658696438}
   - component: {fileID: 9130734676798770550}
   - component: {fileID: 7326468033437050374}
+  - component: {fileID: 362509843346413246}
   m_Layer: 0
   m_Name: MiniGameStitching
   m_TagString: Untagged
@@ -274,6 +275,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &362509843346413246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732898727511048224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395038d87a870ce4e860525b20382a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9111432629782046040
 GameObject:
   m_ObjectHideFlags: 0

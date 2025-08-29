@@ -117,7 +117,7 @@ public class SawingLines : MonoBehaviour
         if (AreSawingLinesComplete())
         {
             // drop chainsaw
-            GameEvents.SawingMiniGameEvent.OnMiniGameFinished.Invoke();
+            GameEvents.SawingMiniGameEvent.OnMiniGameFinished?.Invoke();
         }
     }
 
