@@ -8,6 +8,8 @@ public class FModEvents : MonoBehaviour
     [field: Header("Chainsaw SFX")]
     [field: SerializeField] public EventReference sawStroke { get; private set; }
     [field: SerializeField] public EventReference sawChain { get; private set; }
+    [field: Header("Stitching SFX")]
+    [field: SerializeField] public EventReference stitching { get; private set; }
 
     public static FModEvents instance { get; private set; }
 

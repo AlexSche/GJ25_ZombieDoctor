@@ -25,6 +25,11 @@ public class Thread : MonoBehaviour
         startPoint = transform.position;
     }
 
+    private void OnMouseDown()
+    {
+        AudioManager.instance.PlayOneShotReferenceSound(FModEvents.instance.stitching, transform.position);
+    }
+
     private void OnMouseDrag()
     {
         Vector3 mousePos = GetMousePosition();
@@ -47,6 +52,7 @@ public class Thread : MonoBehaviour
                 if (hitThread.number == number)
                 {
                     // mark this thread and the other as solved!
+                    AudioManager.instance.PlayOneShotReferenceSound(FModEvents.instance.stitching, transform.position);
                     this.isComplete = true;
                     hitThread.isComplete = true;
                     GameEvents.StitchingMiniGameEvent.OnThreadComplete.Invoke();
