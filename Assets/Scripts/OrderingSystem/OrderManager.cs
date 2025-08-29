@@ -30,11 +30,11 @@ public class OrderManager : MonoBehaviour
 
     public void SpawnStitchingOrder()
     {
-        Instantiate(stitchingOrder, spawnTransform);
+        Instantiate(sawingOrder, spawnTransform);
     }
 
     public void SpawnSawingOrder()
     {
-        Instantiate(sawingOrder, spawnTransform);
+        Instantiate(stitchingOrder, spawnTransform);
     }
 }
