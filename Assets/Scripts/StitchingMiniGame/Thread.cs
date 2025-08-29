@@ -1,21 +1,25 @@
+using FMOD.Studio;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Thread : MonoBehaviour
 {
+    private int number;
+    public bool isComplete;
+    private Color[] colorIndex;
+    [SerializeField] private TextMeshPro textMeshPro;
     Vector3 startPoint = Vector3.zero;
     private LineRenderer lineRenderer;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.03f;
         lineRenderer.endWidth = 0.03f;
-        lineRenderer.startColor = Color.black;
-        lineRenderer.endColor = Color.black;
+        colorIndex = HelperUtils.GenerateColors(10);
     }
+
     void Start()
     {
         startPoint = transform.position;
@@ -27,10 +31,28 @@ public class Thread : MonoBehaviour
         DrawThread(startPoint, mousePos);
     }
 
-    private void OnMouseExit()
+    private void OnMouseUp()
     {
-        // if target position reached break;
-        //DrawThread(startPoint, startPoint);
+        Vector3 mouseWorldPos = GetMousePosition();
+        Collider[] overlapping = Physics.OverlapSphere(mouseWorldPos, 0.01f);
+        if (overlapping.Length == 0)
+        {
+            ResetThread();
+        }
+        foreach (Collider c in overlapping)
+        {
+            if (c != GetComponent<Collider>() && c.GetComponent<Thread>() != null)
+            {
+                Thread hitThread = c.GetComponent<Thread>();
+                if (hitThread.number == number)
+                {
+                    // mark this thread and the other as solved!
+                    this.isComplete = true;
+                    hitThread.isComplete = true;
+                    GameEvents.StitchingMiniGameEvent.OnThreadComplete.Invoke();
+                }
+            }
+        }
     }
 
     private Vector3 GetMousePosition()
@@ -47,5 +69,17 @@ public class Thread : MonoBehaviour
     {
         lineRenderer.SetPosition(0, pos1);
         lineRenderer.SetPosition(1, pos2);
+    }
+
+    public void SetNumber(int value)
+    {
+        number = value;
+        textMeshPro.text = number.ToString();
+        spriteRenderer.color = colorIndex[value];
+    }
+
+    private void ResetThread()
+    {
+        DrawThread(gameObject.transform.position, gameObject.transform.position);
     }
 }
