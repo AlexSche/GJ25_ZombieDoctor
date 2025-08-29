@@ -11,13 +11,13 @@ public class StitchingMinigame : MonoBehaviour
     [SerializeField] private int amountPoints = 5;
     [SerializeField] private float offset = 0.5f;
     private readonly List<Vector3> generatedPositions = new List<Vector3>();
-    private readonly List<GameObject> gameObjects = new List<GameObject>();
+    private readonly List<Thread> threads = new List<Thread>();
     private readonly List<int> numbers = new List<int>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameEvents.StitchingMiniGameEvent.OnMiniGameStarted += GenerateThreadPoints;
         GameEvents.StitchingMiniGameEvent.OnMiniGameFinished += RemoveThreads;
+        GameEvents.StitchingMiniGameEvent.OnThreadComplete += AllThreadsComplete;
     }
 
     void GenerateThreadPoints()
@@ -46,7 +46,7 @@ public class StitchingMinigame : MonoBehaviour
             GameObject newPoint = Instantiate(threadPrefab);
             newPoint.transform.position = generatePos;
             generatedPositions.Add(generatePos);
-            gameObjects.Add(newPoint);
+            threads.Add(newPoint.GetComponent<Thread>());
             int randomValue = TakeRandomNumberFromList();
             newPoint.GetComponent<Thread>().name = randomValue.ToString();
             newPoint.GetComponent<Thread>().SetNumber(randomValue);
@@ -58,11 +58,11 @@ public class StitchingMinigame : MonoBehaviour
     private void RemoveThreads()
     {
         generatedPositions.Clear();
-        gameObjects.ForEach(gameObject =>
+        threads.ForEach(thread =>
         {
-            Destroy(gameObject);
+            Destroy(thread.gameObject);
         });
-        gameObjects.Clear();
+        threads.Clear();
     }
 
     private void populateNumbersInList(int amount)
@@ -78,8 +78,27 @@ public class StitchingMinigame : MonoBehaviour
         int value = Random.Range(0, numbers.Count);
         int returnValue = numbers[value];
         numbers.Remove(returnValue);
-        Debug.Log(numbers.Count);
-        Debug.Log(returnValue);
         return returnValue;
+    }
+
+    public bool AreThreadsComplete()
+    {
+        bool AreComplete = true;
+        threads.ForEach(thread =>
+        {
+            if (!thread.isComplete)
+            {
+                AreComplete = false;
+            }
+        });
+        return AreComplete;
+    }
+
+    public void AllThreadsComplete()
+    {
+        if (AreThreadsComplete())
+        {
+            GameEvents.StitchingMiniGameEvent.OnMiniGameFinished?.Invoke();
+        }
     }
 }

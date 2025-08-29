@@ -6,6 +6,7 @@ using UnityEngine;
 public class Thread : MonoBehaviour
 {
     private int number;
+    public bool isComplete;
     private Color[] colorIndex;
     [SerializeField] private TextMeshPro textMeshPro;
     Vector3 startPoint = Vector3.zero;
@@ -42,11 +43,14 @@ public class Thread : MonoBehaviour
         {
             if (c != GetComponent<Collider>() && c.GetComponent<Thread>() != null)
             {
-                Thread thread = GetComponent<Thread>();
-                if (thread.number == number)
+                Thread hitThread = c.GetComponent<Thread>();
+                if (hitThread.number == number)
                 {
                     Debug.Log("stitched this line " + number);
                     // mark this thread and the other as solved!
+                    this.isComplete = true;
+                    hitThread.isComplete = true;
+                    GameEvents.StitchingMiniGameEvent.OnThreadComplete.Invoke();
                 }
             }
         }

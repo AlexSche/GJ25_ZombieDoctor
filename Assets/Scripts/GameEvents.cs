@@ -17,6 +17,7 @@ public static class GameEvents
     public class StitchingMiniGameEvent
     {
         public static UnityAction OnMiniGameStarted;
+        public static UnityAction OnThreadComplete;
         public static UnityAction OnMiniGameFinished;
     }
 
