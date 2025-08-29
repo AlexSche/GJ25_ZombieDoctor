@@ -915,6 +915,13 @@ MonoBehaviour:
       Data3: 844598184
       Data4: -1154856867
     Path: event:/FX/chainsaw
+  <stitching>k__BackingField:
+    Guid:
+      Data1: -606093377
+      Data2: 1297946220
+      Data3: -400274304
+      Data4: 1361406043
+    Path: event:/FX/stitch
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
