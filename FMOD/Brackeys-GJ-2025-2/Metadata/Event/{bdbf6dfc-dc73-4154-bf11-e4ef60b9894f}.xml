@@ -57,7 +57,11 @@
 			<destination>{ca88e40b-7374-4f7c-8b94-c39f46cbd4aa}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< Updated upstream
 			<destination>{5dad280b-50ac-400d-95c1-913db3bfe433}</destination>
+=======
+			<destination>{7be553d2-7b69-434f-b9b6-fa8d9142396f}</destination>
+>>>>>>> Stashed changes
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d533812b-cbbe-448b-b6c1-92f051328389}">
