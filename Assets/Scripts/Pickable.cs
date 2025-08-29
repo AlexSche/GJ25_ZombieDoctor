@@ -19,13 +19,13 @@ public class Pickable : MonoBehaviour
 
     void OnMouseDown()
     {
-        mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         createAnchor();
         createJoint();
     }
 
     private Vector3 GetMouseWorldPos()
     {
+        mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = mouseZCoord;
         return Camera.main.ScreenToWorldPoint(mousePoint);
@@ -41,6 +41,11 @@ public class Pickable : MonoBehaviour
     }
 
     void OnMouseUp()
+    {
+        RemoveJoint();
+    }
+
+    public void RemoveJoint()
     {
         if (grabJoint != null)
             Destroy(grabJoint);

@@ -1,36 +1,23 @@
 using UnityEngine;
 
-public class SawingMiniGame : MonoBehaviour
+public class SawingMinigame : MonoBehaviour
 {
-    [SerializeField] private GameObject limbLeft;
-    [SerializeField] private GameObject limbRight;
-    [SerializeField] private Transform fixedLimbLeftPosition;
-    [SerializeField] private GameObject leftBox;
-    [SerializeField] private Transform fixedLimbRightPosition;
-    [SerializeField] private GameObject rightBox;
-
+    [SerializeField] private GameObject chainsaw;
+    private Transform chainsawDefaultTransform;
     void Start()
     {
-        SetLimbsIntoPosition();
+        chainsawDefaultTransform = chainsaw.transform;
+        GameEvents.SawingMiniGameEvent.OnMiniGameFinished += RepositionProps;
     }
 
-    private void SetLimbsIntoPosition()
+    public void RepositionProps()
     {
-        // set transform for the objects
-        limbLeft.transform.position = fixedLimbLeftPosition.transform.position;
-        limbRight.transform.position = fixedLimbRightPosition.transform.position;
-        //SetTransformPositions();
-
-        // set direction for the objects (joints face each other)
-        Vector3 center = (fixedLimbLeftPosition.position + fixedLimbRightPosition.position) / 2f;
-        Vector3 dir = (limbLeft.transform.position - center).normalized;
-        limbLeft.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        dir = (center - limbRight.transform.position).normalized;
-        limbRight.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-    }
-
-    public void JoinLimbs()
-    {
-
+        chainsaw.GetComponent<Pickable>().RemoveJoint();
+        Rigidbody rb = chainsaw.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        rb.transform.position = chainsawDefaultTransform.position;
+        Debug.Log(chainsawDefaultTransform.position);
+        rb.isKinematic = false;
+        //chainsaw.transform.position = chainsawDefaultTransform.position;
     }
 }
