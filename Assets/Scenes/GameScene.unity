@@ -2104,14 +2104,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1170879090892140878, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-      propertyPath: m_Name
-      value: StartingSawingMinigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 2297213062537414208, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 8188183987613764375, guid: ef37676fca429dd43af5af4c5deec134, type: 3}
       propertyPath: m_Name
       value: surgery_table_saw

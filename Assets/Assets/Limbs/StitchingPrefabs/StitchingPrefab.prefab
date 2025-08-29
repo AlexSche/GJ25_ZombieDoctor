@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8478330603409617706}
   m_Layer: 0
   m_Name: StitchingPrefab
-  m_TagString: Untagged
+  m_TagString: SawAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arm(Upper)L
       objectReference: {fileID: 0}
+    - target: {fileID: 8514329175013297109, guid: f96b4f3d93917384db6cb95eec7c4feb, type: 3}
+      propertyPath: m_TagString
+      value: Limb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -119,6 +123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8478330603409617706}
     m_Modifications:
+    - target: {fileID: 1571935410051598647, guid: 9a1c5c3eec8af5d4bad7a48d41b387cb, type: 3}
+      propertyPath: spring
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1571935410051598647, guid: 9a1c5c3eec8af5d4bad7a48d41b387cb, type: 3}
       propertyPath: maxVelocity
       value: 5
@@ -178,6 +186,10 @@ PrefabInstance:
     - target: {fileID: 4219886195778659636, guid: 9a1c5c3eec8af5d4bad7a48d41b387cb, type: 3}
       propertyPath: m_Name
       value: Arm(Lower)L
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219886195778659636, guid: 9a1c5c3eec8af5d4bad7a48d41b387cb, type: 3}
+      propertyPath: m_TagString
+      value: Limb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
