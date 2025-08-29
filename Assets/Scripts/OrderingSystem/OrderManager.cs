@@ -10,21 +10,31 @@ public class OrderManager : MonoBehaviour
     void Start()
     {
         GameEvents.OrderingEvent.OnCreateOrder += CreateOrder;
+        GameEvents.StitchingMiniGameEvent.OnMiniGameFinished += SpawnStitchingOrder;
+        GameEvents.SawingMiniGameEvent.OnMiniGameFinished += SpawnSawingOrder;
     }
 
     public void CreateOrder()
     {
         if (Random.Range(0, 2) == 0)
         {
-            Debug.Log("Create Stitching Order");
-            //Instantiate(stitchingOrder, spawnTransform);
+
             orderList.AddNewStitchingOrder();
         }
         else
         {
-            Debug.Log("Create Sawing Order");
-            //Instantiate(sawingOrder, spawnTransform);
+
             orderList.AddNewSawingOrder();
         }
+    }
+
+    public void SpawnStitchingOrder()
+    {
+        Instantiate(stitchingOrder, spawnTransform);
+    }
+
+    public void SpawnSawingOrder()
+    {
+        Instantiate(sawingOrder, spawnTransform);
     }
 }
