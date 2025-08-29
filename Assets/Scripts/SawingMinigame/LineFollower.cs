@@ -80,6 +80,6 @@ public class LineFollower : MonoBehaviour
         if (t > progress)
             progress = t;
 
-        Debug.Log($"Line followed: {progress * 100f:0}%");
+        //Debug.Log($"Line followed: {progress * 100f:0}%");
     }
 }

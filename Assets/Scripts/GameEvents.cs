@@ -25,6 +25,8 @@ public static class GameEvents
     public class OrderingEvent
     {
         public static UnityAction OnCreateOrder;
+        public static UnityAction OnSawingOrderComplete;
+        public static UnityAction OnStitchingOrderComplete;
     }
 
 }

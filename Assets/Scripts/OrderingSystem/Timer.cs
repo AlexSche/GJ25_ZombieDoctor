@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float countdown = 15f;
+    [SerializeField] private float countdown = 8f;
     private float timeRemaining = 0f;
     [SerializeField] GameObject timerGO;
     private TMP_Text timerText;
