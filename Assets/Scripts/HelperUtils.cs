@@ -17,8 +17,8 @@ public static class HelperUtils
         for (int i = 0; i < count; i++)
         {
             float hue = (float)i / count; // range [0,1)
-            float saturation = 0.8f;      // keep fairly high for bright colors
-            float value = 0.9f;           // high value for vibrancy
+            float saturation = 0.5f;      // keep fairly high for bright colors
+            float value = 0.7f;           // high value for vibrancy
 
             colors[i] = Color.HSVToRGB(hue, saturation, value);
         }

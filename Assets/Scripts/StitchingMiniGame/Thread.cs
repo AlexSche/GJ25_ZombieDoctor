@@ -11,17 +11,12 @@ public class Thread : MonoBehaviour
     Vector3 startPoint = Vector3.zero;
     private LineRenderer lineRenderer;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.03f;
         lineRenderer.endWidth = 0.03f;
-        //lineRenderer.startColor = Color.black;
-        //lineRenderer.endColor = Color.black;
         colorIndex = HelperUtils.GenerateColors(10);
-        Debug.Log(colorIndex[3]);
     }
 
     void Start()
@@ -35,10 +30,26 @@ public class Thread : MonoBehaviour
         DrawThread(startPoint, mousePos);
     }
 
-    private void OnMouseExit()
+    private void OnMouseUp()
     {
-        // if target position reached break;
-        //DrawThread(startPoint, startPoint);
+        Vector3 mouseWorldPos = GetMousePosition();
+        Collider[] overlapping = Physics.OverlapSphere(mouseWorldPos, 0.01f);
+        if (overlapping.Length == 0)
+        {
+            ResetThread();
+        }
+        foreach (Collider c in overlapping)
+        {
+            if (c != GetComponent<Collider>() && c.GetComponent<Thread>() != null)
+            {
+                Thread thread = GetComponent<Thread>();
+                if (thread.number == number)
+                {
+                    Debug.Log("stitched this line " + number);
+                    // mark this thread and the other as solved!
+                }
+            }
+        }
     }
 
     private Vector3 GetMousePosition()
@@ -62,5 +73,10 @@ public class Thread : MonoBehaviour
         number = value;
         textMeshPro.text = number.ToString();
         spriteRenderer.color = colorIndex[value];
+    }
+
+    private void ResetThread()
+    {
+        DrawThread(gameObject.transform.position, gameObject.transform.position);
     }
 }
