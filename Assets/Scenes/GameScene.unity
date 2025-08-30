@@ -1496,18 +1496,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <mainTheme>k__BackingField:
     Guid:
-      Data1: -1544307267
-      Data2: 1161208387
-      Data3: 1147680167
-      Data4: 134160591
+      Data1: 1259654735
+      Data2: 1221238625
+      Data3: -294766931
+      Data4: -400467261
     Path: event:/Music/BGM
   <sawStroke>k__BackingField:
     Guid:
-      Data1: -1111527940
-      Data2: 1096080499
-      Data3: -270265921
-      Data4: 1334425952
-    Path: event:/FX/sawstroke
+      Data1: -318739765
+      Data2: 1325346870
+      Data3: 1493765814
+      Data4: 1106617568
+    Path: event:/FX/handsaw
   <sawChain>k__BackingField:
     Guid:
       Data1: 1416765629
@@ -1517,10 +1517,10 @@ MonoBehaviour:
     Path: event:/FX/chainsaw
   <stitching>k__BackingField:
     Guid:
-      Data1: -606093377
-      Data2: 1297946220
-      Data3: -400274304
-      Data4: 1361406043
+      Data1: -343996556
+      Data2: 1105821487
+      Data3: -1114276949
+      Data4: 2141453984
     Path: event:/FX/stitch
 --- !u!1 &802102693
 GameObject:
