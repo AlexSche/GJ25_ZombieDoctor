@@ -112,7 +112,7 @@ public class SawingLines : MonoBehaviour
 
     public void SawingLinesComplete()
     {
-        chainsawLoop.setParameterByName("active", 0);
+        //chainsawLoop.setParameterByName("active", 0);
         if (AreSawingLinesComplete())
         {
             // drop chainsaw
