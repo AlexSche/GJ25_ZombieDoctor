@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Snap
+  - Limb
+  - SawAble
+  - StichAble
   layers:
   - Default
   - TransparentFX

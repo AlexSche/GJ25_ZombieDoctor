@@ -9,8 +9,8 @@ public class Pickable : MonoBehaviour
     private Rigidbody grabAnchor;
     [SerializeField] private float spring = 1000f;
     [SerializeField] private float damper = 50f;
-    [SerializeField] private float maxDistance = 0.3f;
-    [SerializeField] private float maxVelocity = 10f;
+    [SerializeField] private float maxDistance = 0.01f;
+    [SerializeField] private float maxVelocity = 5f;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,13 +19,13 @@ public class Pickable : MonoBehaviour
 
     void OnMouseDown()
     {
-        mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         createAnchor();
         createJoint();
     }
 
     private Vector3 GetMouseWorldPos()
     {
+        mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = mouseZCoord;
         return Camera.main.ScreenToWorldPoint(mousePoint);
@@ -41,6 +41,11 @@ public class Pickable : MonoBehaviour
     }
 
     void OnMouseUp()
+    {
+        RemoveJoint();
+    }
+
+    public void RemoveJoint()
     {
         if (grabJoint != null)
             Destroy(grabJoint);

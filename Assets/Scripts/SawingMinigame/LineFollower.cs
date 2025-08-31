@@ -9,6 +9,8 @@ public class LineFollower : MonoBehaviour
     private Vector3 direction;
     private float distance;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private Material gooMaterial;
+    public bool isComplete = false;
     void Awake()
     {
         cam = Camera.main;
@@ -17,7 +19,7 @@ public class LineFollower : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0)) 
+        if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Input.mousePosition;
             Ray ray = cam.ScreenPointToRay(mousePos);
@@ -32,10 +34,22 @@ public class LineFollower : MonoBehaviour
                 }
             }
         }
-        if (progress > 0.85f)
+        if (progress > 0.55f)
         {
-            spriteRenderer.color = new Color(46, 91, 45);
-            // shoot the event that the line has been followed
+            if (!isComplete)
+            {
+                if (gooMaterial)
+                {
+                    spriteRenderer.material = gooMaterial;
+                }
+                else
+                {
+                    spriteRenderer.color = new Color(1, 1, 1);
+                }
+                // shoot the event that THIS line has been followed
+                isComplete = true;
+                GameEvents.SawingMiniGameEvent.OnLineComplete.Invoke();
+            }
         }
     }
 
@@ -49,6 +63,7 @@ public class LineFollower : MonoBehaviour
 
     void Progress()
     {
+        GameEvents.SawingMiniGameEvent.OnEnteredLine.Invoke();
         Vector3 mouseWorld = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
 
         Vector3 lineDir = direction.normalized;
@@ -60,7 +75,7 @@ public class LineFollower : MonoBehaviour
         // Project mouse onto line and get normalized progress
         float dot = Vector3.Dot(toMouse, lineDir);
         float t = Mathf.Clamp01(dot / lineLength);
-        
+
         // Update progress if mouse moves forward along the line
         if (t > progress)
             progress = t;
