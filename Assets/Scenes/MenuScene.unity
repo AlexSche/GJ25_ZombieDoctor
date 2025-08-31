@@ -577,10 +577,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1544307267
-      Data2: 1161208387
-      Data3: 1147680167
-      Data4: 134160591
+      Data1: 1259654735
+      Data2: 1221238625
+      Data3: -294766931
+      Data4: -400467261
     Path: event:/Music/BGM
   Event: 
   EventPlayTrigger: 1
@@ -608,10 +608,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 22443262
-      Data2: 1119095349
-      Data3: -2090502521
-      Data4: 805780276
+      Data1: -2034479001
+      Data2: 1326872034
+      Data3: -691547203
+      Data4: 907853985
     Path: event:/FX/pop
   Event: 
   EventPlayTrigger: 19
