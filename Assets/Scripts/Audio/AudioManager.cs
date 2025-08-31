@@ -51,5 +51,4 @@ public class AudioManager : MonoBehaviour
     {
         instance.setParameterByName(parameterName, parameterValue);
     }
-
 }
